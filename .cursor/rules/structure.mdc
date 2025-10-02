@@ -1,0 +1,62 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Your rule content
+
+rules:
+  - folders:
+      - apps
+      - packages
+    description: |
+      This is a monorepo using workspaces. It contains multiple Next.js apps inside the `apps/` directory and shared code in the `packages/` directory. Each app consumes packages via `workspace:*` dependencies that always resolve to the latest version.
+
+  - folders:
+      - apps/join-flow
+      - apps/shop
+      - apps/template
+      - apps/trials
+      - apps/web-app
+    description: |
+      Each folder under `apps/` is a standalone Next.js app. These apps may share common conventions but serve different purposes. Common folders in these apps include:
+      
+      - `app/`: Next.js 13+ App Router entrypoint.
+      - `components/`: Shared UI components local to the app.
+      - `lib/`: Utility functions and helpers.
+      - `hooks/`: React custom hooks.
+      - `store/` or `stores/`: Global state management.
+      - `public/`: Static assets.
+      - `e2e/`, `test-results/`, `fixtures/`, `playwright/`: Testing-related folders.
+      - `scripts/`: Custom Node scripts.
+      - `actions/`, `client/`, `context/`, `middleware/`, `graphql/`, `stripe/`: App-specific modules.
+
+  - folders:
+      - packages/analytics
+      - packages/auth-client
+      - packages/auth-server
+      - packages/i18n
+      - packages/services
+      - packages/ui
+    description: |
+      These are shared internal libraries consumed by the apps using `workspace:*` references. For example:
+      
+      - `analytics/`: Shared tracking or data collection utilities.
+      - `auth-client/` and `auth-server/`: Frontend and backend authentication logic.
+      - `i18n/`: Internationalization resources and utilities.
+      - `services/`: Shared backend SDKs or service clients (e.g. GraphQL, gRPC).
+      - `ui/`: Shared design system components, hooks, styles, icons, etc.
+
+  - folders:
+      - packages/eslint-config-custom
+      - packages/jest-config
+      - packages/tailwind-config
+      - packages/tsconfig
+    description: |
+      These are shared config packages for linting, testing, Tailwind, and TypeScript settings across all apps. Apps extend or consume these configurations for consistent standards across the monorepo.
+
+  - folders:
+      - readme-assets
+    description: |
+      Static or visual assets (e.g., screenshots, diagrams) used in README files or documentation.
+

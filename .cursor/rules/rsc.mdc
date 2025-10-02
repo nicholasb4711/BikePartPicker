@@ -1,0 +1,14 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# Your rule content
+
+- Use @apps/shop/app/[country]/[language]/(default)/page.tsx as a good example of how we want to structure react server components
+- Flat structure - not too much nesting
+- Don't use state or effect unless absolutely needed
+- Break down into easily parseable chunks 
+- Want to be able to see the UI, read the component and easily map UI sections to code within the page 
+
