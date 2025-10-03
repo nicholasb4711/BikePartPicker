@@ -34,7 +34,7 @@ describe('Header Component', () => {
   it('renders desktop search bar', () => {
     render(<Header />)
     
-    const searchInput = screen.getByPlaceholderText('Search bike parts...')
+    const searchInput = screen.getByPlaceholderText('Search performance parts...')
     expect(searchInput).toBeInTheDocument()
     expect(searchInput).toHaveClass('w-full')
   })
@@ -69,7 +69,7 @@ describe('Header Component', () => {
     await user.click(mobileMenuButton)
     
     // Mobile search and navigation should now be visible
-    const mobileSearchInputs = screen.getAllByPlaceholderText('Search bike parts...')
+    const mobileSearchInputs = screen.getAllByPlaceholderText('Search performance parts...')
     expect(mobileSearchInputs).toHaveLength(2) // Desktop + Mobile
   })
 
@@ -135,14 +135,14 @@ describe('Header Component', () => {
     render(<Header />)
     
     const header = screen.getByRole('banner')
-    expect(header).toHaveClass('bg-white', 'shadow-sm', 'border-b', 'border-gray-200')
+    expect(header).toHaveClass('bg-white/95', 'backdrop-blur-md', 'shadow-sm', 'border-b', 'border-gray-200', 'sticky', 'top-0', 'z-50')
   })
 
   it('handles search input interaction', async () => {
     const user = userEvent.setup()
     render(<Header />)
     
-    const searchInput = screen.getByPlaceholderText('Search bike parts...')
+    const searchInput = screen.getByPlaceholderText('Search performance parts...')
     await user.type(searchInput, 'shimano')
     
     expect(searchInput).toHaveValue('shimano')

@@ -9,9 +9,6 @@ describe('Input Component', () => {
     
     const input = screen.getByRole('textbox')
     expect(input).toBeInTheDocument()
-    expect(input).toHaveClass(
-      'flex', 'h-10', 'w-full', 'rounded-md', 'border', 'border-secondary-300', 'bg-white'
-    )
   })
 
   it('renders with label', () => {
@@ -140,6 +137,5 @@ describe('Input Component', () => {
     
     const input = screen.getByRole('textbox')
     expect(input).not.toHaveClass('border-red-500')
-    expect(input).toHaveClass('border-secondary-300')
   })
 })

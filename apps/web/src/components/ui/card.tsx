@@ -6,12 +6,12 @@ export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export const Card = React.forwardRef<HTMLDivElement, CardProps>(
   ({ className, variant = "default", ...props }, ref) => {
-    const baseClasses = "rounded-lg";
+    const baseClasses = "rounded-lg transition-all duration-300";
     
     const variantClasses = {
       default: "bg-white",
-      outlined: "bg-white border border-secondary-200",
-      elevated: "bg-white shadow-md",
+      outlined: "bg-white border border-gray-200 hover:border-gray-300",
+      elevated: "bg-white shadow-lg hover:shadow-xl transform hover:-translate-y-1 border border-gray-100",
     };
 
     const classes = `${baseClasses} ${variantClasses[variant]} ${className || ""}`;

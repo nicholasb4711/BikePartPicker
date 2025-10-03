@@ -8,12 +8,12 @@ export interface ButtonProps
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant = "primary", size = "md", ...props }, ref) => {
-    const baseClasses = "inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50";
+    const baseClasses = "inline-flex items-center justify-center rounded font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 transform hover:scale-105 active:scale-95";
     
     const variantClasses = {
-      primary: "bg-primary-600 text-white hover:bg-primary-700 focus-visible:ring-primary-500",
-      secondary: "bg-secondary-100 text-secondary-900 hover:bg-secondary-200 focus-visible:ring-secondary-500",
-      outline: "border border-secondary-300 bg-transparent text-secondary-900 hover:bg-secondary-50 focus-visible:ring-secondary-500",
+      primary: "bg-blue-500 text-white hover:bg-blue-600 focus-visible:ring-blue-500 shadow-lg hover:shadow-xl",
+      secondary: "bg-white text-black border border-gray-300 hover:bg-gray-50 focus-visible:ring-gray-400 shadow-sm hover:shadow-md",
+      outline: "border-2 border-black bg-transparent text-black hover:bg-black hover:text-white focus-visible:ring-gray-400",
     };
     
     const sizeClasses = {
