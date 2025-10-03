@@ -19,10 +19,9 @@ describe('Header Component', () => {
     render(<Header />)
     
     const navigationLinks = [
-      'Browse Parts',
+      'Builder',
       'Build Guide', 
-      'Community',
-      'Compatibility'
+      'Completed Builds'
     ]
     
     navigationLinks.forEach(linkText => {
@@ -82,10 +81,9 @@ describe('Header Component', () => {
     
     // Check that navigation links are visible in mobile menu
     const navigationLinks = [
-      'Browse Parts',
+      'Builder',
       'Build Guide',
-      'Community', 
-      'Compatibility'
+      'Completed Builds'
     ]
     
     navigationLinks.forEach(linkText => {
@@ -112,10 +110,9 @@ describe('Header Component', () => {
     render(<Header />)
     
     const expectedLinks = [
-      { name: 'Browse Parts', href: '/parts' },
+      { name: 'Builder', href: '/builder' },
       { name: 'Build Guide', href: '/guide' },
-      { name: 'Community', href: '/community' },
-      { name: 'Compatibility', href: '/compatibility' }
+      { name: 'Completed Builds', href: '/completed-builds' }
     ]
     
     expectedLinks.forEach(({ name, href }) => {
