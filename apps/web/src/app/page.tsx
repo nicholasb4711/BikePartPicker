@@ -1,4 +1,5 @@
 import { Button, Card, CardHeader, CardContent, Input } from "@/components/ui";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -8,10 +9,13 @@ export default function Home() {
           <h1 className="text-5xl font-bold text-black mb-6 tracking-tight">
             BikePartPicker 🚴‍♂️
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Professional-grade part selection, pricing, and compatibility guidance for 
-            performance-focused bicycle builders.
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
+            Professional-grade part selection, pricing, and compatibility
+            guidance for performance-focused bicycle builders.
           </p>
+          <Link href="/build">
+            <Button variant="primary">Start your build</Button>
+          </Link>
         </div>
 
         <div className="flex flex-col md:flex-row gap-8">
@@ -43,7 +47,9 @@ export default function Home() {
               <h2 className="text-2xl font-bold text-black">
                 Advanced Compatibility Engine
               </h2>
-              <p className="text-gray-600">Engineering-grade compatibility validation</p>
+              <p className="text-gray-600">
+                Engineering-grade compatibility validation
+              </p>
             </CardHeader>
             <CardContent>
               <div className="space-y-6">
@@ -75,7 +81,8 @@ export default function Home() {
 
         <div className="mt-16 text-center">
           <p className="text-lg text-gray-600 font-medium">
-            Ready to build your dream machine? Let&apos;s engineer your perfect setup.
+            Ready to build your dream machine? Let&apos;s engineer your perfect
+            setup.
           </p>
         </div>
       </div>
