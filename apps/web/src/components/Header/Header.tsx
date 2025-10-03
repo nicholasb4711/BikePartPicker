@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Button } from "@/components/ui";
 
 export default function Header() {
@@ -8,7 +9,7 @@ export default function Header() {
 
   const navigation = [
     { name: "Builder", href: "/builder" },
-    { name: "Build Guide", href: "/guide" },
+    { name: "Build Guide", href: "/guides" },
     { name: "Completed Builds", href: "/completed-builds" },
   ];
 
@@ -18,24 +19,24 @@ export default function Header() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <a href="/" className="flex items-center space-x-3 group">
+            <Link href="/" className="flex items-center space-x-3 group">
               <span className="text-2xl transition-transform group-hover:scale-110">🚴‍♂️</span>
               <span className="text-xl font-bold text-black tracking-tight">
                 BikePartPicker
               </span>
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8 px-4">
             {navigation.map((item) => (
-              <a
+              <Link
                 key={item.name}
                 href={item.href}
-                  className="text-gray-700 hover:text-black px-3 py-2 text-sm font-semibold transition-all duration-200 hover:scale-105"
+                className="text-gray-700 hover:text-black px-3 py-2 text-sm font-semibold transition-all duration-200 hover:scale-105"
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -123,13 +124,13 @@ export default function Header() {
               {/* Mobile Navigation Links */}
               <nav className="space-y-2">
                 {navigation.map((item) => (
-                  <a
+                  <Link
                     key={item.name}
                     href={item.href}
                     className="block px-3 py-2 text-gray-600 hover:text-black hover:bg-gray-50 rounded-md text-sm font-medium"
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 ))}
               </nav>
 

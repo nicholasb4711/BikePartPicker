@@ -111,7 +111,7 @@ describe('Header Component', () => {
     
     const expectedLinks = [
       { name: 'Builder', href: '/builder' },
-      { name: 'Build Guide', href: '/guide' },
+      { name: 'Build Guide', href: '/guides' },
       { name: 'Completed Builds', href: '/completed-builds' }
     ]
     
