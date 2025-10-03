@@ -7,10 +7,9 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navigation = [
-    { name: "Browse Parts", href: "/parts" },
+    { name: "Builder", href: "/builder" },
     { name: "Build Guide", href: "/guide" },
-    { name: "Community", href: "/community" },
-    { name: "Compatibility", href: "/compatibility" },
+    { name: "Completed Builds", href: "/completed-builds" },
   ];
 
   return (
@@ -28,7 +27,7 @@ export default function Header() {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-8 px-4">
             {navigation.map((item) => (
               <a
                 key={item.name}
