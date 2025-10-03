@@ -4,7 +4,11 @@ import Builder from './page';
 
 // Mock child components
 jest.mock('@/components/Builder/BuildProgress/BuildProgress', () => {
-  return function MockBuildProgress(props: any) {
+  return function MockBuildProgress(props: {
+    currentStep: number;
+    setCurrentStep: (step: number) => void;
+    handleComponentSelect: (component: { id: string; category: string; price: number }) => void;
+  }) {
     return (
       <div data-testid="build-progress">
         <span>Current Step: {props.currentStep}</span>
@@ -18,7 +22,10 @@ jest.mock('@/components/Builder/BuildProgress/BuildProgress', () => {
 });
 
 jest.mock('@/components/Builder/BuildSummary/BuildSummary', () => {
-  return function MockBuildSummary(props: any) {
+  return function MockBuildSummary(props: {
+    selectedComponents: Record<string, unknown>;
+    getTotalPrice: () => number;
+  }) {
     const componentCount = Object.keys(props.selectedComponents).length;
     return (
       <div data-testid="build-summary">

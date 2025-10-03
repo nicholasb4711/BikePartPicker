@@ -16,12 +16,13 @@ jest.mock('@/data/guides', () => ({
 }));
 
 jest.mock('@/components/GuideTemplate', () => {
-  return function MockGuideTemplate({ guide }: { guide: any }) {
+  return function MockGuideTemplate({ guide }: { guide: { title: string } | undefined }) {
     return <div data-testid="guide-template">Guide Template: {guide?.title || 'Loading'}</div>;
   };
 });
 
-const { getGuideBySlug } = require('@/data/guides');
+import { getGuideBySlug } from '@/data/guides';
+const mockGetGuideBySlug = getGuideBySlug as jest.MockedFunction<typeof getGuideBySlug>;
 
 const mockGuide = {
   id: 'test-guide',
@@ -37,7 +38,7 @@ describe('GuidePage', () => {
   });
 
   it('renders GuideTemplate when guide exists', () => {
-    getGuideBySlug.mockReturnValue(mockGuide);
+    mockGetGuideBySlug.mockReturnValue(mockGuide);
     
     render(<GuidePage params={{ slug: 'test-guide' }} />);
     
@@ -46,11 +47,11 @@ describe('GuidePage', () => {
   });
 
   it('passes correct slug to getGuideBySlug', () => {
-    getGuideBySlug.mockReturnValue(mockGuide);
+    mockGetGuideBySlug.mockReturnValue(mockGuide);
     
     render(<GuidePage params={{ slug: 'specific-slug' }} />);
     
-    expect(getGuideBySlug).toHaveBeenCalledWith('specific-slug');
+    expect(mockGetGuideBySlug).toHaveBeenCalledWith('specific-slug');
   });
 });
 
