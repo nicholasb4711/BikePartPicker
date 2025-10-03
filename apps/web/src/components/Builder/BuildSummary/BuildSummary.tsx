@@ -26,7 +26,7 @@ export default function BuildSummary({
               {hasComponents ? (
                 Object.entries(selectedComponents).map(
                   ([category, component]) => (
-                    <div className="flex justify-between items-start">
+                    <div key={category} className="flex justify-between items-start">
                       <div className="flex-1">
                         <p className="font-medium text-black">
                           {component.name}
