@@ -7,39 +7,10 @@ interface BuildSummaryProps {
   getTotalPrice: () => number;
 }
 
-const ComponentItem = ({ component }: { component: BuildComponent }) => (
-  <div className="flex justify-between items-start">
-    <div className="flex-1">
-      <p className="font-medium text-black">{component.name}</p>
-      <p className="text-sm text-gray-600">{component.brand}</p>
-    </div>
-    <p className="font-semibold text-blue-600">
-      ${component.price.toLocaleString()}
-    </p>
-  </div>
-);
-
-const EmptyState = () => (
-  <p className="text-gray-500 text-center py-8">
-    Start selecting components to see your build summary
-  </p>
-);
-
-const BuildActions = () => (
-  <div className="mt-6 space-y-3">
-    <Button variant="primary" className="w-full">
-      Save Build
-    </Button>
-    <Button variant="outline" className="w-full">
-      Share Build
-    </Button>
-    <Button variant="secondary" className="w-full">
-      Find Retailers
-    </Button>
-  </div>
-);
-
-export default function BuildSummary({ selectedComponents, getTotalPrice }: BuildSummaryProps) {
+export default function BuildSummary({
+  selectedComponents,
+  getTotalPrice,
+}: BuildSummaryProps) {
   const hasComponents = Object.keys(selectedComponents).length > 0;
   const hasMultipleComponents = Object.keys(selectedComponents).length > 1;
 
@@ -53,11 +24,27 @@ export default function BuildSummary({ selectedComponents, getTotalPrice }: Buil
           <CardContent>
             <div className="space-y-4">
               {hasComponents ? (
-                Object.entries(selectedComponents).map(([category, component]) => (
-                  <ComponentItem key={category} component={component} />
-                ))
+                Object.entries(selectedComponents).map(
+                  ([category, component]) => (
+                    <div className="flex justify-between items-start">
+                      <div className="flex-1">
+                        <p className="font-medium text-black">
+                          {component.name}
+                        </p>
+                        <p className="text-sm text-gray-600">
+                          {component.brand}
+                        </p>
+                      </div>
+                      <p className="font-semibold text-blue-600">
+                        ${component.price.toLocaleString()}
+                      </p>
+                    </div>
+                  )
+                )
               ) : (
-                <EmptyState />
+                <p className="text-gray-500 text-center py-8">
+                  Start selecting components to see your build summary
+                </p>
               )}
             </div>
 
@@ -65,13 +52,25 @@ export default function BuildSummary({ selectedComponents, getTotalPrice }: Buil
               <>
                 <div className="border-t border-gray-200 mt-4 pt-4">
                   <div className="flex justify-between items-center">
-                    <span className="text-lg font-semibold text-black">Total</span>
+                    <span className="text-lg font-semibold text-black">
+                      Total
+                    </span>
                     <span className="text-2xl font-bold text-blue-600">
                       ${getTotalPrice().toLocaleString()}
                     </span>
                   </div>
                 </div>
-                <BuildActions />
+                <div className="mt-6 space-y-3">
+                  <Button variant="primary" className="w-full">
+                    Save Build
+                  </Button>
+                  <Button variant="outline" className="w-full">
+                    Share Build
+                  </Button>
+                  <Button variant="secondary" className="w-full">
+                    Find Retailers
+                  </Button>
+                </div>
               </>
             )}
           </CardContent>
