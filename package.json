@@ -6,7 +6,11 @@
     "dev": "turbo dev",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "type-check": "turbo type-check"
+    "type-check": "turbo type-check",
+    "test": "turbo test",
+    "test:jest": "turbo test:jest",
+    "test:watch": "turbo test:watch",
+    "test:coverage": "turbo test:coverage"
   },
   "devDependencies": {
     "@turbo/gen": "^1.10.12",

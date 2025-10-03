@@ -7,6 +7,15 @@
     },
     "lint": {},
     "type-check": {},
+    "test": {},
+    "test:jest": {},
+    "test:watch": {
+      "cache": false,
+      "persistent": true
+    },
+    "test:coverage": {
+      "outputs": ["coverage/**"]
+    },
     "dev": {
       "cache": false,
       "persistent": true
