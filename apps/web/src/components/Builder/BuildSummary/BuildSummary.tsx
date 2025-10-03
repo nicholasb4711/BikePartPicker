@@ -38,6 +38,7 @@ export default function BuildSummary({
                       <p className="font-semibold text-blue-600">
                         ${component.price.toLocaleString()}
                       </p>
+                      <p>Test</p>
                     </div>
                   )
                 )
