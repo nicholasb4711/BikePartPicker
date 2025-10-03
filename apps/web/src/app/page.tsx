@@ -1,4 +1,4 @@
-import { Button, Card, CardHeader, CardContent, Input } from "@/components/ui";
+import { Button } from "@/components/ui";
 import Link from "next/link";
 
 export default function Home() {
