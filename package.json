@@ -10,7 +10,8 @@
     "test": "turbo test",
     "test:jest": "turbo test:jest",
     "test:watch": "turbo test:watch",
-    "test:coverage": "turbo test:coverage"
+    "test:coverage": "turbo test:coverage",
+    "test:coverage:check": "turbo test:coverage:check"
   },
   "devDependencies": {
     "@turbo/gen": "^1.10.12",

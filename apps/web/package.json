@@ -11,7 +11,8 @@
     "test": "jest",
     "test:jest": "jest",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "test:coverage:check": "jest --coverage --passWithNoTests"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.0",

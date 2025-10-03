@@ -16,6 +16,9 @@
     "test:coverage": {
       "outputs": ["coverage/**"]
     },
+    "test:coverage:check": {
+      "outputs": ["coverage/**"]
+    },
     "dev": {
       "cache": false,
       "persistent": true
