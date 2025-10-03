@@ -1,0 +1,13 @@
+# Global code ownership
+# These owners will be requested for review when anyone opens a pull request.
+* @nicholasb4711
+
+# Specific ownership for critical files
+/package.json @your-github-username
+/apps/web/package.json @your-github-username
+/turbo.json @your-github-username
+/.github/ @your-github-username
+
+# Component ownership (optional - you can add specific maintainers later)
+/apps/web/src/components/ @your-github-username
+/apps/web/src/app/ @your-github-username
